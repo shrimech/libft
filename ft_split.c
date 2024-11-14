@@ -6,7 +6,7 @@
 /*   By: shrimech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 06:43:07 by shrimech          #+#    #+#             */
-/*   Updated: 2024/11/06 01:39:48 by shrimech         ###   ########.fr       */
+/*   Updated: 2024/11/14 08:12:26 by shrimech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ char	**ft_split(char const *s, char c)
 			word_len = ft_strlen(s);
 		else
 			word_len = ft_strlen(s) - ft_strlen(ft_strchr(s, c));
-		lst[i++] = ft_substr(s, 0, word_len);
+		if (word_len != 0)
+			lst[i++] = ft_substr(s, 0, word_len);
 		if (!lst)
 			return (freemem(lst, i));
 		s += word_len;
@@ -72,7 +73,7 @@ char	**ft_split(char const *s, char c)
 #include <stdio.h>
 int main()
 {
-	char a[] = "salah.eddine.hrimech..shrimech";
+	char a[] = "...........";
 	char b = '.';
 	int i;
 	char **c = ft_split(a, b);
