@@ -6,7 +6,7 @@
 /*   By: shrimech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 06:43:07 by shrimech          #+#    #+#             */
-/*   Updated: 2024/11/14 08:12:26 by shrimech         ###   ########.fr       */
+/*   Updated: 2024/11/14 08:15:34 by shrimech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,7 @@ char	**ft_split(char const *s, char c)
 			return (freemem(lst, i));
 		s += word_len;
 	}
-	lst[i] = NULL;
-	return (lst);
+	return (lst[i] = NULL, lst);
 }
 /*
 #include <stdio.h>
